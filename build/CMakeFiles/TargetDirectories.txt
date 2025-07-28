@@ -1,0 +1,3 @@
+/home/wjx/学习/c++_study/build/CMakeFiles/main_exe.dir
+/home/wjx/学习/c++_study/build/CMakeFiles/edit_cache.dir
+/home/wjx/学习/c++_study/build/CMakeFiles/rebuild_cache.dir
