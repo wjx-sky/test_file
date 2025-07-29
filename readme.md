@@ -126,10 +126,9 @@ int *p = null;
         ptr++;//是按元素进行递加，而不是地址递加，比如如果此时首地址为0x0000,则此时ptr=0x0004;
           ```
   - const限定符
-      const关键字用于指示变量不可修改，防止无意修改变量的值；
+      const关键字用于指示变量不可修改，防止无意修改变量的值  
         1. const对象作用范围默认只有当前文件，如果多个文件用到了同名的const对象，则等同于在不同文件内定义了不同变量
-            想要避免的方法就是利用extern 关键字在头文件做声明，初始化在相应的源文件中
-
+            想要避免的方法就是利用extern 关键字在头文件做声明，初始化在相应的源文件中  
         2. const类型的引用
             const int &i1 = i;//const类型对象在编译器中被认为是可读的，故不可修改
             举例：
@@ -144,7 +143,6 @@ int *p = null;
 
             const int temp = dval;//创建临时变量，进行类型转化；
             const int & r4 = temp;
-
         ```
   - 指针和const
       1. 指向常量的指针（pointer to const）
@@ -161,9 +159,9 @@ int *p = null;
          *p2 = 120;//编译可以通过
          ```
       3. 顶层const
-         所谓顶层const（top -level const）表示该对象本身就是常量，而底层const(low - level const)就是该对象所指向对象是常量，类似于常量指针和指向常量的指针。
-         `const int * const ptr = &a //左侧const是底层const ,表明所指向对象是const对象；右侧const是顶层const,表明该指针是一个常量指针`
-         `const int &r = a //用于声明引用的const都是底层const,表明所指向对象是const对象`
+         所谓顶层const（top -level const）表示该对象本身就是常量，而底层const(low - level const)就是该对象所指向对象是常量，类似于常量指针和指向常量的指针。  
+         `const int * const ptr = &a //左侧const是底层const ,表明所指向对象是const对象；右侧const是顶层const,表明该指针是一个常量指针`  
+         `const int &r = a //用于声明引用的const都是底层const,表明所指向对象是const对象`  
          **注意：int ** p1 = &p2;是指向指针的指针，p1中储存的是p2的地址；而int * p1 = p2是将p2指向的对象的地址给p1 ,两者共同指向某一个对象，例如var**
       4. constexpr和常量表达式
          常量表达式是指在编译过程中就可以得到计算结果的表达式，而在运行中才可以得到结果的不是常量表达式；
@@ -186,6 +184,7 @@ int *p = null;
          ```C++
          const int *p =nullptr;//指向常量的指针；
          constexpr int *q = nullptr;//指向整型的常量指针；使用该关键字定义指针时，指针必须为空或者指向一个具有固定地址的对象，而函数体中定义的变量一般不会存在与固定地址中，而一般只有全局变量或者常量才有固定地址；
+         ```
 
 
          
