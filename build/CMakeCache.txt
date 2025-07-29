@@ -225,15 +225,6 @@ CMAKE_STRIP:FILEPATH=/usr/bin/strip
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
 //Value Computed by CMake
-Project_BINARY_DIR:STATIC=/home/wjx/学习/c++_study/build
-
-//Value Computed by CMake
-Project_IS_TOP_LEVEL:STATIC=ON
-
-//Value Computed by CMake
-Project_SOURCE_DIR:STATIC=/home/wjx/学习/c++_study
-
-//Value Computed by CMake
 day_six_learning_BINARY_DIR:STATIC=/home/wjx/学习/c++_study/build
 
 //Value Computed by CMake
