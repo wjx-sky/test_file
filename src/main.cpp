@@ -1,6 +1,6 @@
 #include<iostream>
 #include "example.h"
-
+int var_3 = 10;
 int main(){
 
 
@@ -23,6 +23,7 @@ int main(){
     c_printfer();
     std::cout<<"main函数中的buffer_1的地址"<<&buffer_1
             <<"\n main函数中buffer_2的地址:"<<&buffer_2<<std::endl;
+    constexpr int *ptr_2=&var_3;
 
     return 0;
     
