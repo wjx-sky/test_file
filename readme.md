@@ -132,7 +132,7 @@ int *p = null;
         2. const类型的引用  
         ```C++
             const int &i1 = i;//const类型对象在编译器中被认为是可读的，故不可修改   
-            int i = 100；
+            int i = 100;
             const int & r2 = i;//此时r2不可修改，但i可以修改，此处只是不想要i的值通过r2被修改。引用必须类型匹配
 
             double dval = 10;
