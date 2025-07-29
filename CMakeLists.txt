@@ -7,4 +7,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 
 set(SOURCE_FILES src/main.cpp src/example.cpp )
+
 add_executable(main_exe ${SOURCE_FILES})
+target_include_directories(main_exe PRIVATE ${CMAKE_SOURCE_DIR}/include)

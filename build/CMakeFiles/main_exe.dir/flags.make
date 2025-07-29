@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = 
+CXX_INCLUDES = -I/home/wjx/学习/c++_study/include
 
 CXX_FLAGS = -std=gnu++17
 

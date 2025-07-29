@@ -71,13 +71,78 @@ add_executable(main_exe ${SOURCE_FILES})
     int &r2=*ptr;//解引用操作符，取出所指向地址对应变量的内容，此时r2就是var的引用
     ```
     -  空指针
+    ```c++
     //c++ 11的写法
     int *p = nullptr;
     //c98写法
     int *P = 0；
     //传统写法
     int *p = null;
+    ```
+## 学习c++的第七天
+  - 指针类型(8字节或者4字节，默认8字节，存储的是地址)
+    1. 相关指令
+        - 空指针判断
+        ```c++
+        int * ptr = nullptr;
+        if(!ptr){
+            std::cout<<"这是一个空指针"<<std::endl;
+        }
+        ```
+        - 指针是否相等
+        ```c++
+        int *ptr_normal,*ptr_empty;
+        if(ptr_normal != ptr_empty){
+
+        }
+        ```
+    2. 万能指针
+        void *ptr, 可接收任何类型的对象；缺点是不能直接解引用；
+        ```C++
+        int var , * ptr = &var;
+        void * ptr_al;
+        ptr_val = &var;
+        *((int *)ptr_al)//万能指针解引用方法；
+        ```
+    3. 指针的指针
+        - 定义
+        ```C++
+        int var = 10,*ptr = &var;
+        int **ptr_sec = &ptr;
+        std::cout<<**ptr_sec<<std::endl;//双层解引用；
+        ```
+        - 指向指针的引用
+        指针不能指向引用，但引用可以指向指针
+        ```c++
+        int * ptr_init = nullptr,init = 24;
+        int *& rpinit = ptr_init;//对指针的引用，此时的引用也是指针类型；
+        rpinit = &init//此时指针也指向init；
+        *rpinit = 0；//解引用修改地址所对应数据，则init数据同样发生变化；
+        ```
+        *数组*
+        ```c++
+        int arr[5]={1,2,3,4,5};
+        int * ptr =arr//数组名就是首地址
+        ptr++;//是按元素进行递加，而不是地址递加，比如如果此时首地址为0x0000,则此时ptr=0x0004;
+          ```
+  - const限定符
+    const关键字用于指示变量不可修改，防止无意修改变量的值；
+    1. const对象作用范围只有当前文件，如果多个文件用到了同名的const对象，则等同于在不同文件内定义了不同变量
+    ‵‵‵c++
     
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
