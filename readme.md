@@ -142,7 +142,7 @@ int *p = null;
 
             const int temp = dval;//创建临时变量，进行类型转化；
             const int & r4 = temp;
-            ```
+        ```
   - 指针和const
       1. 指向常量的指针（pointer to const）
           ```C++
