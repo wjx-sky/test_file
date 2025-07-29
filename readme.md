@@ -130,7 +130,7 @@ int *p = null;
         1. const对象作用范围默认只有当前文件，如果多个文件用到了同名的const对象，则等同于在不同文件内定义了不同变量
             想要避免的方法就是利用extern 关键字在头文件做声明，初始化在相应的源文件中  
         2. const类型的引用  
-        ```C++
+             ```C++
             const int &i1 = i;//const类型对象在编译器中被认为是可读的，故不可修改   
             int i = 100;
             const int & r2 = i;//此时r2不可修改，但i可以修改，此处只是不想要i的值通过r2被修改。引用必须类型匹配
@@ -142,7 +142,7 @@ int *p = null;
 
             const int temp = dval;//创建临时变量，进行类型转化；
             const int & r4 = temp;
-        ```
+             ```
   - 指针和const
       1. 指向常量的指针（pointer to const）
           ```C++
