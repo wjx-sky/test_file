@@ -185,8 +185,117 @@ int *p = null;
          constexpr int *q = nullptr;//指向整型的常量指针；使用该关键字定义指针时，指针必须为空或者指向一个具有固定地址的对象，而函数体中定义的变量一般不会存在与固定地址中，而一般只有全局变量或者常量才有固定地址；
          ```
 
+# 学习C++第八天，7月30日
+## 类型别名
+传统的方法是使用typedef
+```C++
+typedef double wages;
+typedef wages base , *p;//此时base是double的同义词，P 是double *的同义词；
+{
+    wages wage = 10;
+    bash wage_2 = 30;
+    p wage_ptr = &wage;
+}
+{
+    #define base double;//传统C的写法
+}
+//基于C++11的写法
+{
+    using int64_t = long long;//使用using关键字，用int64_t代替long long;
+    int64_t = 234242;
+}
+```
+## 类型别名与指针
+```C++
+typedef char* pstring;
+const pstring pstr = nullptr;//const修饰指针，故为常量指针而不是指针常量，即指针所指向的对象不可修改，但可修改所窒息指向对象的内容,其等价于char* const pstr;
+```
+## auto 推导标识符号
+auto 根据初始化表达式获取表达式类型，常用于声明变量
+```C++
+const int ci = 10;
+auto p =ci;//此时的p是int类型
+const int *p = &ci;
+auto f = *p;//f是int 类型
+auto g = &ci;//由于ci是常量，故为底层const,故g是指针常量，
+const auto g = *p;//g是const int类型对象
+auto & ce = ci;//const引用类型，数据类型由底层决定，而不是顶层；
+//auto & m = c,*pt = &ci;auto推导后面的几种数据类型必须是相同的，否则是错误的；
+```
+## decltype类型标识符
+C++11,不通过表达式的初始化获取变量类型，而通过表达式的类型推导出变量的类型
+```C++
+const int ci =10,&r = ci;
+decltype(ci) p = 0;//表示式的类型直接推导对象的数据类型，而不是通过对对象进行初始化的结果确定数据类型；p为const int 类型数据
+declytpe(r) pq = ci;//pq是const int &引用类型；
+decltype(r+10) var;//int类型
+*p;//引用类型，解引用为引用类型；
+decltype(*p) var = ci;//var 是const int &引用类型；
+decltype((ci)) var_2 =ci;//多加一个括号变成引用类型；
+```
+## 结构体
+结构体（struct）是用户自定义的一种数据类型，将多种数据类型组合在一起，方便管理与调用
+- 结构体的基本使用
+```C++
+struct student{
+    public:
+    int id;
+    std::string name;
+    float score;
+    student(int id_ , std::string name_, float score_):
+    id(id_),name(name_){
+        score = score;
+    }//构造函数,初始化成员变量；
+};//定义结构体；
+student student_1 = {1002,"Jim",93.5f};//未定义构造函数时，快速初始化
+student_1.id = 13033;//调用结构体成员；
+student student_2(134,"ejd",294.3f);//利用构造函数直接初始化；
 
-         
+std::cout<<student_1<<std::endl;//报错，无法输出自定义的数据类型，需进行运算符重载；
+
+```
+## 结构体与类的比较
+### struct ,class的相似之处
+
+- 都可以包含成员函数（构造函数-特殊的成员函数～）
+- 都支持访问控制（public ,private （外部不可访问）,protected（类的子类以及该类可以访问，外部其他类不可访问）
+- 都可以继承与多态（结构体也可以）；
+
+### 结构体与类的区别
+#### 默认访问控制
+- 结构体默认成员访问权限为public;
+- 类默认为private;
+
+### 用途习惯
+ - 结构体：通常用于纯数据结构，主要是用于存储数据，成员通常是公开的；
+ - 类：通常用于包含数据与操作数据的函数，支持更复杂的封装；
+ ```C++
+ class student{
+    private:
+    int size;
+    std::string name;
+    float score;
+    public:
+    int get_size{
+        return size;
+    }
+    void set_size(int size_){
+        size = size_
+    }
+
+ };//定义类，成员访问控制
+ struct address{
+    int door_num;
+    std::string adr;
+ };
+
+ struct Student{
+    int id;
+    std::string name;
+    address persion;
+ };//嵌套结构体
+
+
 
 
 
