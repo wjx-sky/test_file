@@ -24,6 +24,7 @@ struct address{
     std::string name;
     address persion;
  };//嵌套结构体
+ 
 int main(){
 
 
@@ -44,8 +45,8 @@ int main(){
     std::cout<<*ptr<<std::endl;//由*得到指针指向对象var的值
 
     c_printfer();
-    std::cout<<"main函数中的buffer_1的地址"<<&buffer_1
-            <<"\n main函数中buffer_2的地址:"<<&buffer_2<<std::endl;
+    // std::cout<<"main函数中的buffer_1的地址"<<&buffer_1
+    //         <<"\n main函数中buffer_2的地址:"<<&buffer_2<<std::endl;
     constexpr int *ptr_2=var_3;//常量指针，且表达式必须为常量表达式，即表达式必须在编译期就能得到结果
     *ptr_2 = 10;
     
@@ -66,11 +67,11 @@ int main(){
     
     //student student_1,student_2;//结构体定义
     //student_1.id =1003;
-    student student_1(1030,"limei",283);
+    std::string str;
+    std::cout<<"输入第一个字符串"<<std::endl;
+    std::cin>>str;
+   
     
- Student student_3;
- student_3.persion.door_num = 100;//
-
     return 0;
     
 }
